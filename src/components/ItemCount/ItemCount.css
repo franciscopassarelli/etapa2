@@ -1,0 +1,59 @@
+.CounterItemCount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.ControlsItemCount {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Añadido para centrar los controles en pantallas pequeñas */
+  flex-wrap: wrap; /* Añadido para que los botones puedan envolverse en pantallas pequeñas */
+  margin-top: 10px; /* Espacio entre elementos */
+}
+
+.ButtonDecrement,
+.ButtonIncrement,
+.AddToCartButton {
+  background-color: #ec7e00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px 16px; /* Ajuste de padding para pantallas pequeñas */
+  margin: 5px; /* Margen entre botones */
+  transition: background-color 0.3s ease;
+}
+
+.ButtonDecrement:active,
+.ButtonIncrement:active,
+.AddToCartButton:active {
+  background-color: #e63200;
+}
+
+.NumberQuantity {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 10px; /* Espacio alrededor del número */
+}
+
+.AddToCartButton {
+  margin-top: 20px; /* Ajuste de margen superior */
+  width: 100%; /* Botón ocupa todo el ancho del contenedor */
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .ButtonDecrement,
+  .ButtonIncrement,
+  .AddToCartButton {
+    padding: 6px 12px; /* Reducción del padding para pantallas pequeñas */
+    font-size: 14px; /* Reducción del tamaño de fuente para pantallas pequeñas */
+  }
+
+  .NumberQuantity {
+    margin: 5px 10px; /* Reducción del espacio alrededor del númeroo */
+  }
+}

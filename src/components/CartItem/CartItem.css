@@ -1,0 +1,78 @@
+
+.CartItem {
+  background-color: #fff; 
+  border: 1px solid #ddd; 
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.TituloCartItem {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.PrecioItem {
+  font-size: 16px;
+  color: #e0f488; 
+  margin: 5px 0;
+}
+
+
+.CantidadItem {
+  font-size: 16px;
+  color: #555; 
+  margin: 5px 0;
+}
+
+.SubtotalItem {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f44336; 
+  margin: 5px 0;
+}
+
+.BotonEliminar {
+  background-color: #f44336; 
+  color: #fff; 
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.BotonEliminar:hover {
+  background-color: #d32f2f; 
+}
+
+
+@media (max-width: 768px) {
+  .CartItem {
+    flex-direction: row; /* Volver a diseño de fila en dispositivos móviles */
+    align-items: center; /* Centrar elementos en dispositivos móviles */
+  }
+
+  .TituloCartItem {
+    font-size: 14px; /* Reducimos el tamaño del título en dispositivos móviles */
+    margin-right: 10px; /* Espacio entre el título y los otros elementos */
+  }
+
+  .PrecioItem,
+  .CantidadItem,
+  .SubtotalItem {
+    font-size: 12px; /* Reducimos el tamaño de texto para otros elementos en dispositivos móviles */
+  }
+
+  .BotonEliminar {
+    padding: 3px 8px; /* Reducimos el padding del botón en dispositivos móviles */
+    font-size: 10px; /* Reducimos el tamaño de fuente del botón en dispositivos móviles */
+  }
+}
