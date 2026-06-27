@@ -9,27 +9,21 @@ const ItemListContainer = ({ greeting }) => {
 
   const { categoryId } = useParams();
 
-  useEffect(() => {
-    setLoading(true);
+  const baseURL = import.meta.env.VITE_API_URL;
 
-    // Si hay categoría, filtramos por query param
-    const url = categoryId
-      ? `http://localhost:3001/api/products?category=${categoryId}`
-      : "http://localhost:3001/api/products";
+useEffect(() => {
+  setLoading(true);
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data);
-      })
-      .catch((error) => {
-        console.error("Error al obtener productos:", error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, [categoryId]);
+  const url = categoryId
+    ? `${baseURL}/api/products?category=${categoryId}`
+    : `${baseURL}/api/products`;
 
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => setProducts(data))
+    .catch((err) => console.error("Error al obtener productos:", err))
+    .finally(() => setLoading(false));
+}, [categoryId]);
   return (
     <div className="ItemListContainer">
       <h1 className="TitleProducts">{greeting}</h1>

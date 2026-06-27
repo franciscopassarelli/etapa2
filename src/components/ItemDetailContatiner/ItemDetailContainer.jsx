@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`http://localhost:3001/api/products/${itemId}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/products/${itemId}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al obtener el producto");
